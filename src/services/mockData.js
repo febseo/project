@@ -1,0 +1,18 @@
+export const MOCK_RESTAURANTS = [
+  { id: 'm1', name: '진짜 맛있는 삼겹살', rating: 4.7, address: '마포구 합정동 123', category: '한식', emoji: '🥩', color: '#FF6B6B' },
+  { id: 'm2', name: '황금 돈가스', rating: 4.5, address: '서대문구 연희동 45', category: '일식', emoji: '🍱', color: '#4ECDC4' },
+  { id: 'm3', name: '수제 버거 하우스', rating: 4.6, address: '마포구 상수동 78', category: '양식', emoji: '🍔', color: '#45B7D1' },
+  { id: 'm4', name: '전통 비빔밥', rating: 4.8, address: '종로구 인사동 12', category: '한식', emoji: '🍲', color: '#96CEB4' },
+  { id: 'm5', name: '스시 오마카세', rating: 4.9, address: '강남구 청담동 56', category: '일식', emoji: '🍣', color: '#FFEAA7' },
+  { id: 'm6', name: '사천 마라탕', rating: 4.4, address: '영등포구 대림동 89', category: '중식', emoji: '🍜', color: '#DDA0DD' },
+  { id: 'm7', name: '이탈리아 파스타', rating: 4.5, address: '용산구 이태원동 34', category: '양식', emoji: '🍝', color: '#98D8C8' },
+  { id: 'm8', name: '옛날 치킨', rating: 4.6, address: '마포구 홍대입구 67', category: '한식', emoji: '🍗', color: '#F7DC6F' },
+  { id: 'm9', name: '소고기 국밥', rating: 4.3, address: '종로구 광장시장 90', category: '한식', emoji: '🥣', color: '#BB8FCE' },
+  { id: 'm10', name: '명동 칼국수', rating: 4.5, address: '중구 명동 23', category: '한식', emoji: '🍜', color: '#85C1E9' },
+  { id: 'm11', name: '도쿄 라멘', rating: 4.4, address: '강남구 역삼동 11', category: '일식', emoji: '🍜', color: '#F8C471' },
+  { id: 'm12', name: '베트남 쌀국수', rating: 4.2, address: '용산구 한남동 55', category: '동남아', emoji: '🍲', color: '#82E0AA' },
+  { id: 'm13', name: '스테이크 하우스', rating: 4.7, address: '강남구 논현동 33', category: '양식', emoji: '🥩', color: '#EC7063' },
+  { id: 'm14', name: '연남동 브런치', rating: 4.6, address: '마포구 연남동 77', category: '카페', emoji: '☕', color: '#A9CCE3' },
+  { id: 'm15', name: '왕갈비 전문점', rating: 4.8, address: '마포구 망원동 44', category: '한식', emoji: '🍖', color: '#F1948A' },
+  { id: 'm16', name: '딤섬 하우스', rating: 4.3, address: '중구 차이나타운 8', category: '중식', emoji: '🥟', color: '#A8D8EA' },
+];
