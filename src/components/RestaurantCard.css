@@ -1,0 +1,129 @@
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+  flex: 1;
+}
+
+.restaurant-card:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(255, 107, 107, 0.5);
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card-selected {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 2px #ff6b6b, 0 12px 40px rgba(255, 107, 107, 0.3);
+  transform: scale(1.02);
+}
+
+.card-dimmed {
+  opacity: 0.35;
+  transform: scale(0.97);
+  pointer-events: none;
+}
+
+.card-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-emoji {
+  font-size: 4rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+.card-selected-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 107, 107, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+  animation: pop-in 0.2s ease;
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.card-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.stars {
+  font-size: 0.88rem;
+  color: #ffd700;
+}
+
+.rating-num {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card-category {
+  font-size: 0.78rem;
+  color: rgba(255, 107, 107, 0.9);
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-address {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.demo-badge {
+  display: inline-block;
+  margin-top: 0.2rem;
+  padding: 0.1rem 0.45rem;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  color: #ffd700;
+}
