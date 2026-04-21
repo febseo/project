@@ -77,7 +77,7 @@
 }
 
 /* Mobile: stack vertically */
-@media (max-width: 540px) {
+@media (max-width: 767px) {
   .battle-area {
     flex-direction: column;
   }

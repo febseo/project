@@ -1,6 +1,6 @@
 .restaurant-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* 모바일: 사진 위, 글자 아래 */
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
@@ -12,6 +12,14 @@
   font-family: inherit;
   color: inherit;
   flex: 1;
+}
+
+/* PC: 사진 왼쪽, 글자 오른쪽 */
+@media (min-width: 768px) {
+  .restaurant-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
 
 .restaurant-card:hover:not(:disabled) {
@@ -38,6 +46,14 @@
   width: 100%;
   aspect-ratio: 4/3;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .card-photo {
+    width: 45%;
+    flex-shrink: 0;
+    aspect-ratio: unset;
+  }
 }
 
 .card-img {
@@ -81,6 +97,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  flex: 1;
+  min-width: 0;
 }
 
 .card-name {
@@ -112,9 +130,11 @@
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.45);
   margin: 0;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .demo-badge {
