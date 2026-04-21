@@ -12,6 +12,7 @@
   font-family: inherit;
   color: inherit;
   flex: 1;
+  min-height: 0;
 }
 
 /* PC: 사진 왼쪽, 글자 오른쪽 */

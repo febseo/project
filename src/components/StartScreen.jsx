@@ -70,7 +70,7 @@ export default function StartScreen({ onStart }) {
           ) : (
             <div className="location-confirmed">
               <span className="loc-icon">✅</span>
-              <span>{location.demo ? '서울 중심부 (데모)' : `위도 ${location.lat.toFixed(4)}, 경도 ${location.lng.toFixed(4)}`}</span>
+              <span>{location.demo ? '서울 중심부 (데모)' : '현재 위치 확인됨'}</span>
               <button className="relocate-btn" onClick={() => setLocation(null)}>다시</button>
             </div>
           )}
