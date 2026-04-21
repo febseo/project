@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import './StartScreen.css';
 
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
+async function reverseGeocode(lat, lng) {
+  if (!API_KEY) return null;
+  try {
+    const res = await fetch(
+      `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${API_KEY}&language=ko`
+    );
+    const data = await res.json();
+    return data.results?.[0]?.formatted_address ?? null;
+  } catch {
+    return null;
+  }
+}
+
 const RADII = [
   { label: '500m', value: 500 },
   { label: '1km', value: 1000 },
@@ -30,19 +45,25 @@ export default function StartScreen({ onStart }) {
   const [locating, setLocating] = useState(false);
   const [location, setLocation] = useState(null);
   const [locError, setLocError] = useState(null);
+  const [locAddress, setLocAddress] = useState(null);
 
   const handleLocate = () => {
     setLocating(true);
     setLocError(null);
     navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+      async (pos) => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        setLocation({ lat, lng });
+        const address = await reverseGeocode(lat, lng);
+        setLocAddress(address);
         setLocating(false);
       },
       () => {
         setLocError('위치 허용이 거부됐어요. 데모 모드로 진행합니다.');
         setLocating(false);
         setLocation({ lat: 37.5665, lng: 126.9780, demo: true });
+        setLocAddress('서울 중심부 (데모)');
       },
       { timeout: 8000 }
     );
@@ -70,7 +91,7 @@ export default function StartScreen({ onStart }) {
           ) : (
             <div className="location-confirmed">
               <span className="loc-icon">✅</span>
-              <span>{location.demo ? '서울 중심부 (데모)' : '현재 위치 확인됨'}</span>
+              <span>{locAddress ?? '현재 위치 확인됨'}</span>
               <button className="relocate-btn" onClick={() => setLocation(null)}>다시</button>
             </div>
           )}
